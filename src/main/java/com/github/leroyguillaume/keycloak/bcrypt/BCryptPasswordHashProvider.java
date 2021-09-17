@@ -54,7 +54,12 @@ public class BCryptPasswordHashProvider implements PasswordHashProvider {
 
     @Override
     public boolean verify(String rawPassword, PasswordCredentialModel credential) {
-        final String hash = credential.getPasswordSecretData().getValue();
+        String hash = credential.getPasswordSecretData().getValue();
+        if (hash.contains("SALT$$")) {
+            String[] parts = hash.split("\\$\\$");
+            hash = parts[2];
+            rawPassword = rawPassword + parts[1];
+        }
         BCrypt.Result verifier = BCrypt.verifyer().verify(rawPassword.toCharArray(), hash.toCharArray());
         return verifier.verified;
     }
