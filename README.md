@@ -9,13 +9,13 @@ Add a password hash provider to handle BCrypt passwords inside Keycloak.
 
 ## Test with docker-compose
 ```bash
-cp build/libs/keycloak-bcrypt-1.6.0.jar docker/
+cp build/libs/keycloak-bcrypt-1.6.2.jar docker/
 docker-compose up -d
 ```
 
 ## Install
 ```
-curl -L https://github.com/ommsolutions/keycloak-bcrypt/releases/download/1.6.0/keycloak-bcrypt-1.6.0.jar > KEYCLOAK_HOME/standalone/deployments/keycloak-bcrypt-1.6.0.jar
+curl -L https://github.com/ommsolutions/keycloak-bcrypt/releases/download/1.6.2/keycloak-bcrypt-1.6.2.jar > KEYCLOAK_HOME/standalone/deployments/keycloak-bcrypt-1.6.2.jar
 ```
 You need to restart Keycloak.
 
